@@ -19,7 +19,7 @@ metrics_sma = backtester_sma.calculate_metrics()
 backtester_sma.print_metrics()
 
 # Visualise SMA results
-print("Generating visualizations for SMA strategy...")
+print("Generating visualisations for SMA strategy...")
 visualiser_sma = Visualiser(results_sma, strategy_name="SMA Crossover (20, 50)")
 visualiser_sma.plot_performance(save_path='sma_performance.png')
 visualiser_sma.plot_signals(save_path='sma_signals.png')
@@ -34,10 +34,10 @@ metrics_momentum = backtester_momentum.calculate_metrics()
 backtester_momentum.print_metrics()
 
 # Visualise Momentum results
-print("Generating visualizations for Momentum strategy...")
+print("Generating visualisations for Momentum strategy...")
 visualiser_momentum = Visualiser(results_momentum, strategy_name="Momentum (20-day)")
 visualiser_momentum.plot_performance(save_path='momentum_performance.png')
 visualiser_momentum.plot_signals(save_path='momentum_signals.png')
 visualiser_momentum.plot_rolling_metrics(save_path='momentum_rolling_metrics.png')
 
-print("\n✅ Phase 3 tests and visualizations completed!")
+print("\n✅ Phase 3 tests and visualisations completed!")

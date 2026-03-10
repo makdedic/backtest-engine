@@ -39,7 +39,7 @@ This backtesting engine allows you to:
 - **Win Rate** — Percentage of profitable trading days
 - **Outperformance** — Excess return vs. buy-and-hold
 
-### Visualizations
+### Visualisations
 - Portfolio value over time (vs. benchmark)
 - Maximum drawdown analysis
 - Trading signals on price chart
@@ -77,7 +77,7 @@ python main.py
 This will:
 1. Fetch SPY data from 2023-01-01 to 2024-01-01
 2. Run SMA Crossover and Momentum strategies
-3. Calculate metrics and generate visualizations
+3. Calculate metrics and generate visualisations
 
 ### Custom Backtest
 
@@ -123,7 +123,7 @@ backtest-engine/
 ├── data_fetcher.py         # Data fetching and validation
 ├── strategies.py           # Trading strategy implementations
 ├── backtester.py           # Core backtesting engine
-├── visualiser.py           # Visualization utilities
+├── visualiser.py           # Visualisation utilities
 ├── requirements.txt        # Python dependencies
 └── README.md               # This file
 ```
@@ -178,7 +178,7 @@ Outperformance                    -8.92%
 - **Python 3.8+** — Core language
 - **pandas** — Data manipulation and analysis
 - **numpy** — Numerical computations
-- **matplotlib** — Visualizations
+- **matplotlib** — Visualisations
 - **yfinance** — Market data fetching
 
 ## Notes
@@ -206,4 +206,4 @@ Created as a portfolio project demonstrating:
 - Python software engineering best practices
 - Financial analysis and quantitative methods
 - Data pipeline design
-- Visualization and communication of results
+- Visualisation and communication of results

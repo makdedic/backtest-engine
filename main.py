@@ -2,7 +2,7 @@
 Backtesting Engine - Main Entry Point
 
 This script runs a complete backtest of trading strategies on historical market data,
-calculates performance metrics, and generates visualizations.
+calculates performance metrics, and generates visualisations.
 """
 
 from data_fetcher import DataFetcher
