@@ -35,9 +35,9 @@ backtester_momentum.print_metrics()
 
 # Visualize Momentum results
 print("Generating visualizations for Momentum strategy...")
-visualizer_momentum = Visualizer(results_momentum, strategy_name="Momentum (20-day)")
-visualizer_momentum.plot_performance(save_path='momentum_performance.png')
-visualizer_momentum.plot_signals(save_path='momentum_signals.png')
-visualizer_momentum.plot_rolling_metrics(save_path='momentum_rolling_metrics.png')
+visualiser_momentum = Visualiser(results_momentum, strategy_name="Momentum (20-day)")
+visualiser_momentum.plot_performance(save_path='momentum_performance.png')
+visualiser_momentum.plot_signals(save_path='momentum_signals.png')
+visualiser_momentum.plot_rolling_metrics(save_path='momentum_rolling_metrics.png')
 
 print("\n✅ Phase 3 tests and visualizations completed!")

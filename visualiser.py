@@ -3,7 +3,7 @@ import pandas as pd
 import numpy as np
 
 class Visualiser:
-    """Create visualizations for backtest results"""
+    """Create visualisations for backtest results"""
     
     def __init__(self, backtest_data, strategy_name="Strategy"):
         """
@@ -68,7 +68,7 @@ class Visualiser:
         plt.tight_layout()
         plt.savefig(save_path, dpi=300, bbox_inches='tight')
         print(f"✅ Performance chart saved to {save_path}")
-        plt.show()
+        plt.close()
     
     def plot_signals(self, save_path='trading_signals.png'):
         """
@@ -99,7 +99,7 @@ class Visualiser:
         plt.tight_layout()
         plt.savefig(save_path, dpi=300, bbox_inches='tight')
         print(f"✅ Signals chart saved to {save_path}")
-        plt.show()
+        plt.close()
     
     def plot_rolling_metrics(self, window=30, save_path='rolling_metrics.png'):
         """
@@ -117,10 +117,13 @@ class Visualiser:
         rolling_volatility = returns.rolling(window=window).std() * np.sqrt(252)
         rolling_sharpe = (returns.rolling(window=window).mean() * 252) / rolling_volatility
         
+        # Align indices (remove NaN values)
+        valid_idx = rolling_volatility.dropna().index
+        
         # Plot rolling volatility
         ax1 = axes[0]
-        ax1.plot(self.data.index[window:], rolling_volatility.iloc[window:], linewidth=2, color='#F18F01')
-        ax1.fill_between(self.data.index[window:], rolling_volatility.iloc[window:], alpha=0.3, color='#F18F01')
+        ax1.plot(valid_idx, rolling_volatility[valid_idx], linewidth=2, color='#F18F01')
+        ax1.fill_between(valid_idx, rolling_volatility[valid_idx], alpha=0.3, color='#F18F01')
         ax1.set_ylabel('Annual Volatility', fontsize=11, fontweight='bold')
         ax1.set_title('Rolling Annual Volatility', fontsize=12, fontweight='bold')
         ax1.grid(True, alpha=0.3)
@@ -128,8 +131,8 @@ class Visualiser:
         
         # Plot rolling Sharpe ratio
         ax2 = axes[1]
-        ax2.plot(self.data.index[window:], rolling_sharpe.iloc[window:], linewidth=2, color='#2E86AB')
-        ax2.fill_between(self.data.index[window:], rolling_sharpe.iloc[window:], alpha=0.3, color='#2E86AB')
+        ax2.plot(valid_idx, rolling_sharpe[valid_idx], linewidth=2, color='#2E86AB')
+        ax2.fill_between(valid_idx, rolling_sharpe[valid_idx], alpha=0.3, color='#2E86AB')
         ax2.axhline(y=0, color='black', linestyle='--', linewidth=1, alpha=0.5)
         ax2.set_ylabel('Sharpe Ratio', fontsize=11, fontweight='bold')
         ax2.set_xlabel('Date', fontsize=11, fontweight='bold')
@@ -139,4 +142,4 @@ class Visualiser:
         plt.tight_layout()
         plt.savefig(save_path, dpi=300, bbox_inches='tight')
         print(f"✅ Rolling metrics chart saved to {save_path}")
-        plt.show()
+        plt.close()
