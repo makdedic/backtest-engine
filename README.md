@@ -8,7 +8,7 @@ This backtesting engine allows you to:
 - **Fetch historical market data** from Yahoo Finance
 - **Implement trading strategies** with clean, modular code
 - **Calculate performance metrics** (Sharpe ratio, max drawdown, returns, etc.)
-- **Visualize results** with professional-grade charts
+- **visualise results** with professional-grade charts
 - **Compare strategies** side-by-side
 
 ## Features
@@ -111,7 +111,7 @@ backtester = Backtester(data, strategy, initial_capital=100000)
 results = backtester.run()
 metrics = backtester.calculate_metrics()
 
-# Visualize
+# visualise
 visualiser = Visualiser(results, strategy_name="My Strategy")
 visualiser.plot_performance()
 ```
