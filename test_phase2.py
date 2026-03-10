@@ -20,10 +20,10 @@ backtester_sma.print_metrics()
 
 # Visualize SMA results
 print("Generating visualizations for SMA strategy...")
-visualizer_sma = Visualiser(results_sma, strategy_name="SMA Crossover (20, 50)")
-visualizer_sma.plot_performance(save_path='sma_performance.png')
-visualizer_sma.plot_signals(save_path='sma_signals.png')
-visualizer_sma.plot_rolling_metrics(save_path='sma_rolling_metrics.png')
+visualiser_sma = Visualiser(results_sma, strategy_name="SMA Crossover (20, 50)")
+visualiser_sma.plot_performance(save_path='sma_performance.png')
+visualiser_sma.plot_signals(save_path='sma_signals.png')
+visualiser_sma.plot_rolling_metrics(save_path='sma_rolling_metrics.png')
 
 # Test MomentumStrategy with Backtester
 print("\n=== Testing Momentum Strategy ===")
