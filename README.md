@@ -143,6 +143,21 @@ backtest-engine/
   - `lookback_window=20` (momentum calculated over 20 days)
 - **Use case**: Mean reversion and momentum capture
 
+### 3. RSI Strategy
+- **Logic**: Buy when RSI < 30 (oversold), sell when RSI > 70 (overbought)
+- **Parameters**:
+  - `period=14` (RSI calculation period)
+  - `oversold=30` (oversold threshold)
+  - `overbought=70` (overbought threshold)
+- **Use case**: Mean reversion on oversold/overbought conditions
+
+### 4. Mean Reversion Strategy
+- **Logic**: Buy when price falls 2 std devs below 20-day MA, sell when it returns
+- **Parameters**:
+  - `ma_period=20` (moving average period)
+  - `std_multiplier=2` (standard deviation multiplier)
+- **Use case**: Trading price reversions to the mean
+
 ## Example Results
 
 Running `python main.py` on SPY (2023-2024) produces:
@@ -160,6 +175,19 @@ Buy & Hold Return                 24.15%
 Outperformance                    -8.92%
 ==================================================
 ```
+
+## Testing
+
+Run unit tests to verify the backtesting engine:
+```bash
+python -m unittest test_unit.py -v
+```
+
+This runs tests for:
+- Data fetching and validation
+- Strategy signal generation
+- Backtesting calculations
+- Metrics accuracy
 
 ## Future Improvements
 

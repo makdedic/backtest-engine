@@ -7,7 +7,7 @@ class Visualiser:
     
     def __init__(self, backtest_data, strategy_name="Strategy"):
         """
-        Initialize Visualiser
+        Initialise Visualiser
         
         Args:
             backtest_data (pd.DataFrame): Data from Backtester.run()
