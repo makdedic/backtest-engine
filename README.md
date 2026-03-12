@@ -191,14 +191,13 @@ This runs tests for:
 
 ## Future Improvements
 
-- [ ] Add more strategies (RSI, Bollinger Bands, MACD)
 - [ ] Implement position sizing and risk management
 - [ ] Add stop-loss and take-profit mechanisms
 - [ ] Parameter optimization (grid search, genetic algorithms)
 - [ ] Monte Carlo simulation for robustness testing
 - [ ] Transaction costs and slippage modeling
 - [ ] Walk-forward analysis
-- [ ] Unit tests and integration tests
+- [ ] Integration tests
 - [ ] Support for multiple asset classes
 
 ## Technical Stack
